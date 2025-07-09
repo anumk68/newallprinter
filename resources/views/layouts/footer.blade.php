@@ -86,19 +86,19 @@
                 <h6 class="fw-bold mt-4">Subscribe Now</h6>
                 <p>Don’t miss our future updates! Get Subscribed Today!</p>
                 <form id="subscribeForm" class="d-flex" action="{{ route('subscribe') }}" method="POST">
-                    @csrf
+    @csrf
 
-                    <div class="d-flex flex-column w-100 me-2">
-                        <input type="email" name="email" id="subscribeEmail" class="form-control  me-2"
-                            placeholder="Your email">
-                        <small class="text-danger d-none" id="emailError"></small>
-                    </div>
+    <div class="d-flex flex-column w-100 me-2">
+        <input type="email" name="email" id="subscribeEmail" class="form-control me-2" placeholder="Your email">
+        <small class="text-danger d-none" id="emailError"></small>
+    </div>
 
-                    <button type="submit" id="subscribeBtn" class="btn btn-light text-black ms-2 bt-sm">
-                        <span id="btnText">Subscribe</span>
-                        <span id="btnLoader" class="spinner-border spinner-border-sm d-none"></span>
-                    </button>
-                </form>
+   <button type="submit" id="subscribeBtn" class="btn btn-light text-black ms-2 bt-sm" style="height: 48px;">
+    Subscribe
+</button>
+
+</form>
+
             </div>
         </div>
     </div>
@@ -204,75 +204,66 @@
         });
     });
 </script>
-
 <script>
-    document.getElementById('subscribeForm').addEventListener('submit', function(e) {
+    document.getElementById('subscribeForm').addEventListener('submit', function (e) {
         e.preventDefault();
 
         const form = this;
         const btn = document.getElementById('subscribeBtn');
         const emailInput = document.getElementById('subscribeEmail');
         const emailError = document.getElementById('emailError');
-        const btnText = document.getElementById('btnText');
-        const btnLoader = document.getElementById('btnLoader');
 
         // Reset UI
         emailError.textContent = '';
         emailError.classList.add('d-none');
-
         btn.disabled = true;
-        btnText.classList.add('d-none');
-        btnLoader.classList.remove('d-none');
 
         fetch(form.action, {
-                method: 'POST',
-                headers: {
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: emailInput.value,
-                })
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: emailInput.value,
             })
-            .then(async response => {
-                const data = await response.json();
+        })
+        .then(async response => {
+            const data = await response.json();
 
-                if (!response.ok) {
-                    throw data;
-                }
+            if (!response.ok) {
+                throw data;
+            }
 
-                // Success
-                form.reset();
-                showToast(data.success, 'success');
-            })
-            .catch(err => {
-                if (err.errors && err.errors.email) {
-                    emailError.textContent = err.errors.email[0];
-                    emailError.classList.remove('d-none');
-                } else {
-                    showToast('Something went wrong!', 'error');
-                }
-            })
-            .finally(() => {
-                btn.disabled = false;
-                btnText.classList.remove('d-none');
-                btnLoader.classList.add('d-none');
-            });
+            // Success
+            form.reset();
+            showToast(data.success, 'success');
+        })
+        .catch(err => {
+            if (err.errors && err.errors.email) {
+                emailError.textContent = err.errors.email[0];
+                emailError.classList.remove('d-none');
+            } else {
+                showToast('Something went wrong!', 'error');
+            }
+        })
+        .finally(() => {
+            btn.disabled = false;
+        });
     });
 
-    // Toast helper
     function showToast(message, type = 'success') {
         const bg = type === 'success' ? 'bg-success' : 'bg-danger';
         const toast = document.createElement('div');
         toast.className = `toast align-items-center text-white ${bg} border-0 show position-fixed bottom-0 end-0 m-3`;
         toast.style.zIndex = 9999;
         toast.innerHTML = `
-        <div class="d-flex">
-            <div class="toast-body">${message}</div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
-        </div>
-    `;
+            <div class="d-flex">
+                <div class="toast-body">${message}</div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        `;
         document.body.appendChild(toast);
 
         setTimeout(() => toast.remove(), 3000);

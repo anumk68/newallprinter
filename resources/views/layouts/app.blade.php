@@ -257,21 +257,21 @@
         });
     </script>
     <!------------------------------------------services_detail_banner--------------------------------------------->
-    <script>
-        (() => {
-            'use strict';
-            const forms = document.querySelectorAll('.needs-validation');
-            Array.from(forms).forEach(form => {
-                form.addEventListener('submit', event => {
-                    if (!form.checkValidity()) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                }, false);
-            });
-        })();
-    </script>
+        {{-- <script>
+            (() => {
+                'use strict';
+                const forms = document.querySelectorAll('.needs-validation');
+                Array.from(forms).forEach(form => {
+                    form.addEventListener('submit', event => {
+                        if (!form.checkValidity()) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            })();
+        </script> --}}
     <script>
         let currentStep = 1;
 
@@ -306,40 +306,6 @@
         }
     </script>
 
-    <!--
-    <script>
-        let currentStep = 1;
-
-        function showStep(step) {
-            document.querySelectorAll('.step').forEach((el, index) => {
-                el.classList.remove('active');
-            });
-            document.getElementById(`step${step}`).classList.add('active');
-            currentStep = step;
-        }
-
-        function nextStep() {
-            if (currentStep < 4) {
-                showStep(currentStep + 1);
-            }
-        }
-
-        function prevStep() {
-            if (currentStep > 1) {
-                showStep(currentStep - 1);
-            }
-        }
-
-        function selectOption(btn, group) {
-            document.querySelectorAll(`.btn-outline-custom`).forEach(el => {
-                if (el.parentElement.innerHTML === btn.parentElement.innerHTML) {
-                    el.classList.remove('active');
-                }
-            });
-            btn.classList.add('active');
-        }
-    </script>
-     -->
     <script>
         $(document).ready(function() {
             $(".review-carousel").owlCarousel({
@@ -441,53 +407,59 @@
             });
         });
     </script>
+<script>
+    $(document).ready(function () {
+        $('.inquiry-form').on('submit', function (e) {
+            e.preventDefault();
 
-    <script>
-        $(document).ready(function() {
-            $('.inquiry-form').on('submit', function(e) {
-                e.preventDefault();
+            let form = $(this);
+            let formId = form.attr('id');
+            let formPrefix = formId.split('_')[1];
+            let actionUrl = form.attr('action');
+            let formData = form.serialize();
+            let submitButton = form.find('button[type="submit"]');
 
-                let form = $(this);
-                let formId = form.attr('id'); // e.g. inquiryForm_service1
-                let formPrefix = formId.split('_')[1]; // service1
-                let actionUrl = form.attr('action');
-                let formData = form.serialize();
+            // Clear previous errors and messages
+            form.find('.text-danger').remove();
+            form.find('.is-invalid').removeClass('is-invalid');
+            $('#successMessage_' + formPrefix).addClass('d-none').text('');
+            $('#errorMessages_' + formPrefix).addClass('d-none').text('');
 
-                // Clear previous errors and messages
-                form.find('.text-danger').remove();
-                form.find('.is-invalid').removeClass('is-invalid');
-                $('#successMessage_' + formPrefix).addClass('d-none').text('');
-                $('#errorMessages_' + formPrefix).addClass('d-none').text('');
+            // Disable the submit button
+            submitButton.prop('disabled', true).text('Submitting...');
 
-                $.ajax({
-                    url: actionUrl,
-                    method: 'POST',
-                    data: formData,
-                    success: function(response) {
-                        $('#successMessage_' + formPrefix)
+            $.ajax({
+                url: actionUrl,
+                method: 'POST',
+                data: formData,
+                success: function (response) {
+                    $('#successMessage_' + formPrefix)
+                        .removeClass('d-none')
+                        .text(response.message);
+                    form[0].reset();
+                },
+                error: function (xhr) {
+                    if (xhr.status === 422) {
+                        let errors = xhr.responseJSON.errors;
+                        $.each(errors, function (field, messages) {
+                            let input = form.find('[name="' + field + '"]');
+                            input.addClass('is-invalid');
+                            input.after('<div class="text-danger">' + messages[0] + '</div>');
+                        });
+                    } else {
+                        $('#errorMessages_' + formPrefix)
                             .removeClass('d-none')
-                            .text(response.message);
-                        form[0].reset();
-                    },
-                    error: function(xhr) {
-                        if (xhr.status === 422) {
-                            let errors = xhr.responseJSON.errors;
-                            $.each(errors, function(field, messages) {
-                                let input = form.find('[name="' + field + '"]');
-                                input.addClass('is-invalid');
-                                input.after('<div class="text-danger">' + messages[0] +
-                                    '</div>');
-                            });
-                        } else {
-                            $('#errorMessages_' + formPrefix)
-                                .removeClass('d-none')
-                                .text('An error occurred. Please try again.');
-                        }
+                            .text('An error occurred. Please try again.');
                     }
-                });
+                },
+                complete: function () {
+                    // Always re-enable the button
+                    submitButton.prop('disabled', false).text('Submit');
+                }
             });
         });
-    </script>
+    });
+</script>
 
     <script>
         function openIframeModal(url) {
@@ -638,7 +610,7 @@
         setTimeout(() => {
             currentBox.classList.remove('show');
             currentBox.style.display = 'none';
-        }, 5000);
+        }, 8000);
     }
 
     // Start after 2s

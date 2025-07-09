@@ -143,24 +143,21 @@ class HomeController extends Controller
 
     public function package_detail($slug)
     {
-        $package = Package::where('slug', $slug)->firstOrFail();
+        $packag = Package::with('review')->where('slug', $slug)->firstOrFail();
 
-        $packages = Package::where('slug', '!=', $slug)
-            ->where('status', 1)
-            ->latest()
-            ->take(4)
-            ->get();
-
-        // Get all reviews with user info manually (without relationship)
-        $reviews = Review::where('package_id', $package->id)
+        $reviews = Review::where('package_id', $packag->id)
             ->where('status', '1')
             ->get()
             ->map(function ($review) {
-                $review->user = User::find($review->user_id); // manually attach user
+                $review->user = User::find($review->user_id);
                 return $review;
             });
 
-        return view('frontend.package_detail', compact('package', 'packages', 'reviews'));
+        $packages = Package::where('slug', '!=', $slug)->with(['review' => function ($query) {
+            $query->where('status', 1);
+        }])->with('orders')->where('status', 1)->latest()->take(4)->get();
+
+        return view('frontend.package_detail', compact('packag', 'packages', 'reviews'));
     }
 
     public function checkout($id)

@@ -18,10 +18,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceSupportController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\VlogsController;
-use App\Models\Subscribe;
 use Illuminate\Support\Facades\Route;
-
-use Illuminate\Support\Facades\Mail;
 
 Route::get('/printer/{brand_slug}', [HomeController::class, 'hp_printer'])->name('printer');
 Route::get('/service/{brand_slug}/{service_slug}', [HomeController::class, 'show'])->name('service_detail');
@@ -208,8 +205,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('order-view/{id}', [OrderController::class, 'order_view'])->name('order.view');
 
     //Subscribe
-        Route::get('Subscribe', [SubscribeController::class, 'index'])->name('subscribe.index');
-        Route::any('subscribe-delete/{id}', [SubscribeController::class, 'delete'])->name('subscribe.delete');
+    Route::get('Subscribe', [SubscribeController::class, 'index'])->name('subscribe.index');
+    Route::any('subscribe-delete/{id}', [SubscribeController::class, 'delete'])->name('subscribe.delete');
+
+    //Customer inquery
+
+    Route::get('/inquiry-list', [ContactController::class, 'inquery_list'])->name('inquiry.list');
+    Route::get('/inquiry-detail/{id}', [ContactController::class, 'inquery_show'])->name('inquery.show');
+    Route::any('/inquery-destroy/{id}', [ContactController::class, 'inquery_destroy'])->name('inquery.destroy');
+
 });
 
 Route::any('/contact-add', [ContactController::class, 'contactstore'])->name('contact-add');
@@ -221,7 +225,6 @@ Route::post('/login', [AdminController::class, 'login'])->name('adminlogin');
 
 Route::post('/ckeditor/upload', [BlogController::class, 'uploadimage'])->name('ckeditor.upload');
 Route::get('/service/{slug}', [ServiceController::class, 'show'])->name('services.show');
-
 
 Route::get('/clear-route-cache', function () {
     \Artisan::call('route:clear');

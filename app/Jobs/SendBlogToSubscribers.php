@@ -33,6 +33,7 @@ class SendBlogToSubscribers implements ShouldQueue
                 Mail::to($email)->queue(new NewBlogMail($this->blog));
             }
             sleep(10);
+
         }
     }
 

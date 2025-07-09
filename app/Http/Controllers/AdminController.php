@@ -143,11 +143,11 @@ class AdminController extends Controller
 
         if (!$setting) {
             return redirect()->route('metapage')->with('error', 'Setting not found');
+
         }
 
         return view('admin.settings.edit', ['setting' => $setting]);
     }
-
 
     public function updateSetting(Request $request)
     {

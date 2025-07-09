@@ -5,7 +5,6 @@
 		<div class="page-wrapper">
 			<div class="page-content">
             <div class="container">
-
             <div class="card">
                     <div class="card-body flex flex-col p-6">
                         <header
@@ -13,7 +12,7 @@
                             <div class="flex-1">
                                 <div class="card-title text-slate-900 dark:text-white">Setting</div>
                             </div>
-                            
+
                         </header>
                         <div class="card-text h-full  nav_tab_Dashboard">
                             <div>
@@ -57,7 +56,7 @@
                                                 <div class="form-group row">
 
                                                     <label class="col-md-2 col-from-label" for="avatar">Add Image</label>
-                                                    
+
                                                     <div class="col-md-10">
                                                         <input type="hidden" name="types[]" value="header_logo">
                                                         <input type="file" name="header_logo" accept="image/*" id="avatar" class="form-control" required>
@@ -217,9 +216,9 @@
                                                             <input type="hidden" name="types[]" value="footer_contact_us">
                                                             <input type="text" name="fields[field_seven]" value="{{ $sett->where('type', 'fields[field_seven]')->first()->value}}" class="form-control" if="fields[field_seven]">
                                                         </div>
-                                                        
+
                                                     </div>
-                                                    
+
 
                                                 </div>
 
@@ -284,7 +283,7 @@
                                             </div>
 
                                         </form> --}}
-                                            
+
                                         <!--Footer setting end here-->
 
                                     </div>
@@ -302,7 +301,7 @@
                                         <div class="row">
                                             <form action="{{ route('settings.new_meta') }}" method="post">
                                                 @csrf
-                                            
+
                                                         <div class="col-md-12 mt-3">
                                                             <div>
                                                                 <label class="form-label" for="selectmeta">Select Meta Type :</label>
@@ -323,7 +322,7 @@
                                                             </div>
                                                         </div>
 
-                                                        
+
                                                         <div class="col-md-12 mt-2">
                                                             <div>
                                                                 <label class="form-label" for="value">Value To Display :</label>
@@ -333,11 +332,11 @@
                                                         <div class="col-md-4 mt-3">
                                                             <button class="btn btn-success btn-sm mt-4 mb-3" type="submit">Add Value</button>
                                                         </div>
-                                            
+
                                             </form>
                                         </div>
                                         </div>
-                                        
+
                                         <div class="container">
                     <ul class="nav nav-tabs mt-4 mb-5" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
@@ -359,7 +358,7 @@
                                     <th>Meta Name</th>
                                     <th>Meta Value</th>
                                     <th>Action</th>
-                                   
+
                                 </tr>
                             </thead>
                                 @foreach($descriptionsettings as $description)
@@ -422,7 +421,7 @@
                         </table>
                         </div>
                     </div>
-                
+
                                         </div>
                                     </div>
                                 </div>
@@ -432,7 +431,7 @@
                 </div>
 
     <!-- Displaying Existing Settings -->
-    
+
 </div>
             </div>
 		</div>
@@ -443,7 +442,7 @@
 		<!--Start Back To Top Button-->
 		  <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
 		<!--End Back To Top Button-->
-	
+
 	</div>
 	<!--end wrapper-->
 

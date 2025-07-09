@@ -82,11 +82,11 @@
 
                 <!-- Left Column (Video) -->
                 <!-- <div class="video-container">
-                                <video autoplay muted loop>
-                                     <source src="{{ asset('public/video/final_after_changes.mp4') }}" type="video/mp4">
-                                  Why Choose All Printer Setup to Fix Your Printer Issues?
-                                </video>
-                            </div> -->
+                                    <video autoplay muted loop>
+                                         <source src="{{ asset('public/video/final_after_changes.mp4') }}" type="video/mp4">
+                                      Why Choose All Printer Setup to Fix Your Printer Issues?
+                                    </video>
+                                </div> -->
                 <div class="col-md-6 mx-auto text-center">
                     <div class="video-thumbnail" onclick="openPopup()">
                         <img src="{{ asset('public/images/video_background_img.jpg') }}" alt="printer_logo">
@@ -159,29 +159,23 @@
         </div>
     </section>
 
-
     <section class="member_pricing">
         <div class="container">
-
-
             <div class="row align-items-center">
                 <div class="col-md-12">
                     <div class="sec-title-two text-center">
                         <h2 class="title">Flexible Plans for Reliable Printer Support </h2>
                     </div>
-
                 </div>
-
             </div>
-              <div class="row justify-content-center">
+            <div class="row justify-content-center">
                 @foreach ($packages as $package)
                     @php
                         $packageReviews = $package->review ?? collect();
                         $average = $packageReviews->avg('rating');
-
                         $rounded = round($average * 2) / 2;
                         $count = $packageReviews->count();
-                          $subscriberCount = $package->orders->count();
+                        $subscriberCount = $package->orders->count();
                     @endphp
 
                     <div class="col-md-3 mb-3">
@@ -207,7 +201,7 @@
                                     @endfor
                                     <div class="reviews">{{ $count }}+ Reviews</div>
                                 </div>
-                                <div class="reviewws">{{$subscriberCount}}+ already Subscribed</div>
+                                <div class="reviewws">{{ $subscriberCount }}+ already Subscribed</div>
                             </div>
 
                             <span class="toggle-link" onclick="toggleList(this)">Show More Features</span>
@@ -223,11 +217,9 @@
                         </div>
                     </div>
                 @endforeach
-
-
- <div class="btn_member_btn">
-                        <a href="{{ route('members') }}" class="btn">See More</a>
-                    </div>
+                <div class="btn_member_btn">
+                    <a href="{{ route('members') }}" class="btn">See More</a>
+                </div>
             </div>
 
         </div>
@@ -245,7 +237,7 @@
                 <div class="col-md-3">
                     <div class="button pull-right">
                         <!-- <a href="{{ route('blogs') }}">Read More News<i class="fa fa-caret-right"
-                                        aria-hidden="true"></i></a> -->
+                                            aria-hidden="true"></i></a> -->
                         <a href="{{ route('blogs') }}" class="btn">Read More News</i></a>
                     </div>
                 </div>
@@ -447,24 +439,24 @@
                 <div class="printer-decor bottom-left"></div>
 
                 <div class="notify-text">
-                <div class="notify-img">
-                    <img src="{{ asset('public/images/icons8-happy.gif') }}" alt="">
-                </div>
-             <div class="rating_pricing">
-                       <span class="name">🎉 {{ ucfirst($order->user->name) }} just subscribed!</span>
+                    <div class="notify-img">
+                        <img src="{{ asset('public/images/icons8-happy.gif') }}" alt="">
+                    </div>
+                    <div class="rating_pricing">
+                        <span class="name">🎉 {{ ucfirst($order->user->name) }} just subscribed!</span>
 
-                    @if ($order->amount)
-                        <span class="plan mb-1">💰 ${{ $order->amount }} Plan</span>
-                    @endif
+                        @if ($order->amount)
+                            <span class="plan mb-1">💰 ${{ $order->amount }} Plan</span>
+                        @endif
 
-                    @if ($order->created_at)
-                        <span class="plan mb-1">🕒 {{ $order->created_at->diffForHumans() }}</span>
-                    @endif
+                        @if ($order->created_at)
+                            <span class="plan mb-1">🕒 {{ $order->created_at->diffForHumans() }}</span>
+                        @endif
 
-                    @if ($order->package->package_name)
-                        <span class="plan mb-1">📦 {{ $order->package->package_name }}</span>
-                    @endif
-             </div>
+                        @if ($order->package->package_name)
+                            <span class="plan mb-1">📦 {{ $order->package->package_name }}</span>
+                        @endif
+                    </div>
 
                 </div>
             </div>

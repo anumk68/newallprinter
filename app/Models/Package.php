@@ -19,9 +19,11 @@ class Package extends Model
     ];
 
     protected $casts = [
-        'subscriptions' => 'array',
+    'subscriptions' => 'array',
         'status' => 'boolean',
-    ];
+
+];
+
 
     public function reviews()
 {

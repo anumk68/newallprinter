@@ -60,10 +60,11 @@
                     </div>
 
                     <!-- Description -->
-                    <div class="form-group row mb-3">
+
+                     <div class="form-group row mb-3">
                         <label class="col-md-3 col-form-label">Description</label>
                         <div class="col-md-9">
-                            <textarea name="description" class="form-control" rows="5">{{ $package->description }}</textarea>
+                            <textarea class="form-control" id="description" rows="5" name="description">{{ $package->description }}</textarea>
                         </div>
                     </div>
 
@@ -87,7 +88,8 @@
                     <div class="form-group row mb-3">
                         <label class="col-md-3 col-form-label">Subscriptions (User IDs)</label>
                         <div class="col-md-9">
-                            <input type="text" name="subscriptions" class="form-control" placeholder="e.g. 1,2,3" value="{{ $package->subscriptions }}">
+                          <input type="text" name="subscriptions" class="form-control" placeholder="e.g. 1,2,3" value="{{ is_array($package->subscriptions) ? implode(',', $package->subscriptions) : $package->subscriptions }}">
+
                         </div>
                     </div>
 
