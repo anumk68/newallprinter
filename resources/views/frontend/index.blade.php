@@ -14,7 +14,7 @@
                     <div class="banner_content">
                         <h1 class="display-5 fw-bold">Dealing with Printer Problems? Get Instant Support</h1>
                         <p class="mt-3">
-                            All Printer Setup offers expert and accessible Online Printer Support Services to customers all
+                            All Printer Setup offers expert and accessible Online & On-Site Printer Support Services to customers all
                             over the USA. Whether your printer is displaying spooler errors, having connectivity issues, or
                             just not responding, our expert support team is here to assist you. From simple driver updates
                             to complex setup failures, we do it all—so you can stop worrying about technical issues.

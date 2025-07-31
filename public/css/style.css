@@ -41,7 +41,7 @@ i.fa-solid.fa-user {
 /*----------------------7-2-2025-----------------------------*/
 .fixed-call-btn {
     position: fixed;
-    top: 76%;
+    top: 82%;
     left: 0;
     transform: translateY(-50%) rotate(-90deg);
     transform-origin: left top;
@@ -3482,4 +3482,41 @@ section.member_pricing .plan {
 }
 .priter-all-serv-mainnn-cnttt {
     color: #fff;
+}
+.priter-all-serv-mainnn-img img {
+    width: 100%;
+    height: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.services-mnn-seccchdd h2 {
+    text-align: center;
+}
+.background_color_all_sec {
+    background: #152545;
+    border-radius: 15px;
+    padding: 30px 0;
+}
+section.faques_redirect .accordion-button:not(.collapsed) {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+    font-weight: 700;
+}
+section.faques_redirect .accordion-button {
+    font-weight: 700 !important;
+}
+section.faques_redirect .all-serv-accordian-imgg img {
+    width: 100%;
+}
+.main-b-tagpg li b {
+    color: #3eb9de;
+}
+ul.main-b-tagpg li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+ul.main-b-tagpg {
+    padding-left: 0;
 }

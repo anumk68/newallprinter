@@ -1,16 +1,15 @@
 @extends('layouts.app')
 @section('content')
-<!--Start breadcrumb area-->
-<section class="banner-section" style="background: linear-gradient(rgb(31 191 255 / 52%), rgb(31 191 255 / 52%)), url(public/images/redirectbanner_1.jpg);">
+<section class="banner-section" style="background: linear-gradient(rgb(31 191 255 / 52%), rgb(31 191 255 / 52%)), url(public/images/redirectbanner_5.jpg);">
    
     <div class="container">
         <div class="row align-items-center g-5">
         <!-- Left Content -->
         <div class="col-lg-6">
     <div class="banner_content">
-            <h1 class="display-5 fw-bold">HP Printer Support</h1>
+            <h1 class="display-5 fw-bold">EPSON Printer Support</h1>
             <p class="mt-3">
-          Is your HP printer not printing properly, showing error codes, or not connecting to Wi-Fi? Our HP (Hewlett-Packard) printer support service is here to help you. Whether you have driver issues, print quality problems, paper jams, or setup errors, we provide reliable solutions tailored to your model. We specialize in repairing HP DeskJet, OfficeJet, LaserJet, and All-in-One printers with expert guidance. From wireless configuration to firmware updates, our technicians ensure your printer performs at its best. Don't waste time searching for solutions - get real help from trusted experts. Whether for home or office, we provide support that restores your printer's full functionality without hassle. Stay productive with our easy-to-understand troubleshooting and step-by-step help. Get in touch today and let us solve your HP printing problems efficiently.
+           Are you having printing issues with your Epson printer? Whether your device won't connect, appears offline, or isn't printing properly, our Epson printer support service provides fast and reliable help. At All Printer Setup, we're experts at solving all types of Epson printer problems—from installation errors to paper jams and driver issues. Our experienced team understands the nuances of Epson models and provides step-by-step guidance tailored to your setup. We make sure your printer stays connected, updated, and running smoothly. Avoid downtime and technical stress with our expert support just a call away. Whether you use your Epson printer for home, office, or business, we're here to solve your problems quickly. Count on us for setup help, error resolution, and performance tuning that gets results.
             </p>
     
     </div>
@@ -30,25 +29,22 @@
   </div>
 </section>
 
-
-
 <section class="priter-all-serv-mainnn py_8 pb-0">
     <div class="container">
         <div class="services-mnn-seccchdd">
-            <h2>GET HP (Hewlett Packard) Printer Support Help Instantly or Quickly</h2>
+            <h2>Get EPSON Printer Support Help Instantly or Quickly</h2>
         </div>
         <div class="row align-items-center background_color_all_sec  mb-4">
                          <div class="col-md-4">
                     <div class="priter-all-serv-mainnn-img">
-                        <img src="{{ asset('public/images/about/printer_support_service_1.png') }}"
-                        alt="printing_form">
+                   <img src="{{ asset('public/images/about/epson_printer_support_help.jpg') }}"
+                                alt="printing_form">
                     </div>
                     </div>
                 <div class="col-md-8">
                         <div class="priter-all-serv-mainnn-cnttt">
-                        <h3>HP Printer Support or Hewlett Packard Printer Assistance Anytime You Need It</h3>
-                        <p>Welcome to " <a href="{{route('home')}}">All Printer Setup</a> ". We provide the full <a href="{{route('testroute')}}">HP printer support</a> or <a href="{{route('testroute')}}">Hewlett Printer Support </a>or guidance for the home users as well as for the business users. Whether your Hewlett Packard printer is malfunctioning or you need some assistance with installation or just troubleshooting, our dedicated team of experts are available to serve you with top HP printer help and support.  </p>
-                        <p>We're here for you whenever you need our <a href="{{route('testroute')}}">HP support printer support services.</a> Your printer must be up and running at all times, so we're here 24/7. From installation setup to troubleshooting any situation that comes your way, we are a one-stop solution to all HP-related problems in printers.</p>
+                      <h3>Epson Printers Support Help</h3>
+                        <p><a href="{{ route('epson_business') }}">Epson printers</a> are great for their dependability and high output quality. It covers all areas-from printing from homes and small offices to professional photo and document production. They come with inkjet, laser, and all-in-one. It can be made to serve most market segments in terms of budget or printing needs. But what really makes life easy for the customer is that most Epson printers have wireless connectivity, and it's relatively straightforward to print directly from smartphones, tablets, and computers. Whether you print a lot or need extra-large prints to make one-of-a-kind applications, Epson gives you a great balance between performance and value.</p>
                     </div>
                 </div>
 
@@ -58,14 +54,14 @@
 
             <div class="col-md-8">
                         <div class="priter-all-serv-mainnn-cnttt">
-                        <h3>HP Printer Support Numbers at Your Fingertips</h3>
-                        <p>If you need expert HP printer support? Contact us through our HP printer support number for instant help. We also offer a dedicated Hewlett Packard (HP) printer support number for direct access to specialists. Whether it's installation, troubleshooting, or regular maintenance, our HP printer support phone number ensures you get the HP printer phone support you need. Our team is always ready to assist with any printer-related issues. Chat with us and get reliable solutions for your printer help or support.
+                        <h3>Epson Printing Common Issues</h3>
+                        <p>Many customers are facing the same and common issues with Epson Printers include banding, incorrect colours appearing, blurry prints, grainy prints, or faded prints. If you have these same issues and if your Epson product is not printing properly, search for your specific product on our website to obtain helpful troubleshooting information or book an appointment from CHAT BOX and with filling of contact us form.
                         </p>
                     </div>
             </div>
                         <div class="col-md-4">
                     <div class="priter-all-serv-mainnn-img">
-                        <img src="{{ asset('public/images/about/Customer_support.jpg') }}"
+                         <img src="{{ asset('public/images/about/Our_Epson_Printer_Support_Services.jpg') }}"
                         alt="printing_form">
                     </div>
             </div>
@@ -76,16 +72,15 @@
             <div class="col-md-4">
                 <div class="priter-all-serv-mainnn-div">
                     <div class="priter-all-serv-mainnn-img">
-                        <img src="{{ asset('public/images/about/Smooth_operation.jpg') }}"
-                        alt="printing_form">
-                        
+                        <img src="{{ asset('public/images/about/epson_Service_Support.png') }}"
+                        alt="Epson_Service_Support">
                     </div>
                         </div>
             </div>
               <div class="col-md-8">
                       <div class="priter-all-serv-mainnn-cnttt">
-                        <h3>HP Printer Help for Smooth Operation</h3>
-                        <p>At All Printer Setup, we believe in providing not just support, but also education. Our HP printer help services include step-by-step guidance to ensure you can operate your printer easily or efficiently. We focus on preventing issues before they start, saving your time and frustration. Your solution is just one click away from you. Get a call on your number just fill the query form and get a quick response from our expert team side for your printer support help.  </p>
+                        <h3>Epson Printers Support Help</h3>
+                        <p>Welcome to All Printer Setup, your printer assistant in the USA. We provide detailed <a href="{{ route('epson_business') }}">Epson Printers Support</a> Help, which includes installation and configuration services, troubleshooting, and maintenance. Whether you have any connectivity, require a driver or just any kind of print-related issue, our specialized team ensures smooth and efficient performance. We are committed to the Epson printer since we serve you with expert opinion and solutions crafted to suit specific needs.</p>
                     </div>
               </div>
           
@@ -96,29 +91,29 @@
 
          <div class="col-md-8">
             <div class="priter-all-serv-mainnn-cnttt">
-                        <h3>Hewlett Packard Printer Help for Easy Installation</h3>
-                        <p>You can install the Hewlett Packard printer very easily by just unwrapping the device and plugging it into an electric outlet. After that, you need to install the ink cartridges as well as load paper into the paper tray. It's time to download drivers from the HP Support website and follow all the instructions on the display. The wireless models will require you to connect to your WiFi via either the control panel or the HP Smart app. If the installation fails, don't worry as HP Printer Support is there to help. If you face any problem during the installation, hire our assistant now!</p>
+                        <h3>Comprehensive Epson Printer Support Services</h3>
+                        <p>All Printer Setup dedicated <a href="{{ route('epson_business') }}"> Epson Printer Support Services</a> make your printing experience remarkably seamless. In case you need help regarding installation, configuration, troubleshooting, or even maintaining any type of Epson printer model; our experts are there for you. Be it connectivity issues, driver installation-related problems, or to just address any query related to Epson printers, we're there to guide you with specific solutions and support. Leave the smooth and efficient running of your Epson printer in our hands.</p>
              </div>
          </div>
 
                 <div class="col-md-4">
                         <div class="priter-all-serv-mainnn-img">
-                        <img src="{{ asset('public/images/about/printing_form(2).jpg') }}"
-                        alt="printing_form">
+                        <img src="{{ asset('public/images/about/epson_Printer_Help.png') }}"
+                        alt="Epson_Printer_Help">
                     </div>
                 </div>
         </div>
         <div class="row align-items-center background_color_all_sec  mb-4">
             <div class="col-md-4">
                         <div class="priter-all-serv-mainnn-img">
-                        <img src="{{ asset('public/images/about/home-printer-based-toner.jpg') }}"
-                        alt="printing_form">
+                           <img src="{{ asset('public/images/about/Printer_Customer_Support.png') }}"
+                        alt="Epson_Printer_Customer_Support">
                     </div>
             </div>
            <div class="col-md-8">
                      <div class="priter-all-serv-mainnn-cnttt">
-                        <h3>HP New Printer Installation Assistance</h3>
-                        <p>Get expert assistance for installing your new HP printer. Follow simple steps for setup, driver installation, and troubleshooting to ensure smooth printing. Book Your Assistant now at <a href="{{route('home')}}">“ALL PRINTER SETUP”</a>. </p>
+                        <h3>Epson Printer Ink Issues</h3>
+                        <p>Epson ink issues can be frustrating, but they are often manageable with the right approach. Common problems that persist with the ink include smudging, clogging of nozzles, or low ink warnings when the level of ink is actually not that low. First of all, the levels of ink have to be checked along with ensuring the cartridges are appropriately installed. Nozzle clogging should best be fixed by running the cleaning cycle on the printer, and genuine Epson ink should be used for avoiding any compatibility issues. If the problem is still persistent, then one will always seek Epson support for further troubleshooting steps to help get your printer working properly. </p>
                     </div>
            </div>
 
@@ -126,21 +121,20 @@
         <div class="row align-items-center background_color_all_sec  mb-4">
                    <div class="col-md-8">
                         <div class="priter-all-serv-mainnn-cnttt">
-                        <h3>Install HP Printer with Ease</h3>
-                        <p>Whether you’re setting up a new printer or reinstalling after a system update, we’re here to help you install HP printers seamlessly. Our experts can walk you through each step, ensuring your printer is configured correctly and ready for use.</p>
+                        <h3>Epson Printer Common Errors</h3>
+                        <p>If your printer is displaying an error code or message on the control panel, search our blog for full guidance. Mainly errors include 'Paper jam, Replace maintenance box, Printer is Offline, Printer Not Printing/Responding, Poor Print Quality, Can't Print via Phone/iPad, Noisy Printer, Printer Printing Slow, Scanner Not Working and more.</p>
                     </div>
             </div>
              <div class="col-md-4">
                        <div class="priter-all-serv-mainnn-img">
-                        <img src="{{ asset('public/images/about/Install_HP_Printer_with_Ease.jpg') }}"
-                        alt="printing_form">
+                     <img src="{{ asset('public/images/about/epson_Printer_Help.png') }}"
+                        alt="Epson_Printer_Help">
                     </div>
              </div>
      
         </div>
     </div>
 </section>
-
 
 <section class="faques_redirect">
     <div class="container">
@@ -150,8 +144,8 @@
         <div class="row align-items-center">
             <div class="col-md-6">
                   <div class="all-serv-accordian-imgg">
-                    <img src="{{ asset('public/images/about/faq-pge-right.jpg') }}"
-                                alt="faq_img">
+                     <img src="{{ asset('public/images/about/printer_faq_1.png') }}"
+                    alt="faq_img">
                 </div>
             </div>
             <div class="col-md-6">
@@ -160,49 +154,50 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                     Can HP Printer Connect to 5G WIFI?
+                        How to Set Up Epson Printer with the Connect Utility 
                         </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                          Many customers have a 1 question, Can HP Printer Connect to 5G Wifi? So the correct answer is Yes, many HP printers can connect to 5G WiFi networks, but compatibility depends on the specific printer model. To connect, ensure your printer supports 5G, check your router settings, and install the latest printer drivers. Once ready, use the printer’s control panel or the HP Smart app to connect to your 5G network. For assistance, HP Printer Support is available to help with any issues you may encounter.
+                      The answer for <a href="https://allprintersetup.com/blogs/epson-connect-printer-setup-utility">how to setup Epson Printer with the Connect Utility</a> is: To set up your Epson printer, ensure it’s powered on and connected to the same Wi-Fi network as your device. Download and install the Epson Connect Utility. If you don't know how to install Epson Connect Utility, Contact us or book an appointment. Our Expert team member will guide you properly. Open the utility to follow the step-by-step instructions for adding your printer. Once ready, enroll your printer in your Epson account for mobile printing features. Finally, print a test page to confirm everything is set up correctly. For more visit our blogs section and search for the perfect blog for your query. 
                         </div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            How to Install HP DeskJet 2700 Printer
+                      How do I contact Epson printer support?
+
                         </button>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                          Need help with your new HP DeskJet 2700? Follow our expert advice on how to install HP DeskJet 2700 printer quickly and correctly. Our detailed instructions will ensure you’re up and running in no time.
-                            To install your HP DeskJet 2700 printer, unbox it and remove all packaging. Connect the power cord and turn on the printer. Insert the ink cartridges and load paper into the input tray. Download and install the printer drivers from the HP Support website. For wireless setup, press the Wi-Fi button and use the HP Smart app to connect to your network. Finally, print a test page to check functionality. For any issues, HP Printer Support is available to help.
+                           In case you have any queries about the Epson printer or you need printer assistance, then you are free to connect with our team at All Printer Setup. Fix appointments for assistance or support help and also get direct assistance with live chat with our active members for quick response. You can also email us with your queries on our mail address. Our experts will guide you through troubleshooting, installation, and maintenance regarding all your issues related to the Epson printer.
+                              
                         </div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                         How to Setup Your HP Wifi Printer?
+                        How do I fix my Epson printer problem?
                         </button>
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                         The answer for how to setup your HP wifi Printer is: Firstly unbox and power it on, then install the ink cartridges and load paper. Press the Wi-Fi button to connect to your network or use the HP Smart app. Download and install the latest drivers from the HP Support website, then print a test page to ensure it's working. For any issues, HP Printer Support is available to help.
+                        Fix Epson Printer Problem Follow these simple steps to solve your Epson printer problem. Check all the connections of your Epson printer for everything to be properly connected either by a proper electronic cable or through a Wi-Fi network. You also need to restart your printer as well as your computer to remove some transient issues. Run the self-diagnostic function for problems within your Epson printer and clean the print heads if you see some quality issues. Update your printer drivers on the official Epson website. Lastly, check on the ink levels and replace any low cartridges. If problems persist, call All Printer Setup for expert advice.
                         </div>
                         </div>
                     </div>
                              <div class="accordion-item">
                         <h2 class="accordion-header" id="headingfour">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
-                        How to Install New HP Printers?
+                         How can I reset my Epson printer?
                         </button>
                         </h2>
                         <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingfour" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                       We guide step by step how to install HP Printer in our blog section. Visit that blog and learn how to install your HP new printer properly. In short, To install a new HP printer, unbox it and connect the power cord, then turn it on. Install the ink cartridges and load paper into the input tray. Download the latest printer drivers from the HP Support website and follow the installation instructions. For wireless setup, connect the printer to your WiFi network using the control panel or the HP Smart app. Finally, print a test page to ensure everything is functioning properly. If you need assistance, HP Printer Support is available.
+                   To reset your Epson printer, first turn it on and then locate the reset button, usually found on the printer's control panel. Press and hold the reset button for about 5 to 10 seconds until the printer's lights blink or you see a confirmation message on the screen. If your printer does not have a physical reset button, you can perform a factory reset through the printer's settings menu. Navigate to the "Setup" or "Settings" option, find "Restore Default Settings," and confirm your choice. This will restore the printer to its original factory settings.
                         </div>
                         </div>
                     </div>
@@ -211,13 +206,6 @@
         </div>
     </div>
 </section>
-
-
-
-
-
-<!--Start Brand area-->
-
 <section id="marquee">
         <div class="container" >
             <div class="pic-container" >
